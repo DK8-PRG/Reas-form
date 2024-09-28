@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const { validateEmail, validatePhone } = require("../utils/validation");
 
 const leadSchema = new mongoose.Schema({
   estateType: {
@@ -11,45 +12,30 @@ const leadSchema = new mongoose.Schema({
     required: [true, "Zadejte Vaše jméno"],
     minlength: [2, "Jméno musí mít alespoň 2 znaky"],
     maxlength: [50, "Jméno nesmí být delší než 50 znaků"],
-    unique: true,
     trim: true,
   },
   phone: {
     type: String,
-    required: [true, "Zadejte Váš telefonní číslo"],
-    match: [
-      /^\+?(420|421)?\d{9}$/,
-      "Telefonní číslo musí být ve formátu +420xxxxxxxxx, 420xxxxxxxxx, +421xxxxxxxxx nebo 421xxxxxxxxx",
-    ],
+    required: [true, "Zadejte Vaše telefonní číslo"],
+    validate: {
+      validator: validatePhone,
+      message:
+        "Telefonní číslo musí být ve formátu +420xxxxxxxxx, 420xxxxxxxxx, +421xxxxxxxxx nebo 421xxxxxxxxx",
+    },
     unique: true,
   },
   email: {
     type: String,
     required: [true, "Zadejte Váš email"],
-    match: [
-      /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
-      "Email musí být ve formátu nekdo@neco.tam",
-    ],
+    validate: {
+      validator: validateEmail,
+      message: "Email musí být ve formátu nekdo@neco.tam",
+    },
     unique: true,
   },
   region: {
-    type: String,
-    enum: [
-      "Hlavní město Praha",
-      "Středočeský kraj",
-      "Jihočeský kraj",
-      "Plzeňský kraj",
-      "Karlovarský kraj",
-      "Ústecký kraj",
-      "Liberecký kraj",
-      "Královéhradecký kraj",
-      "Pardubický kraj",
-      "Kraj Vysočina",
-      "Jihomoravský kraj",
-      "Olomoucký kraj",
-      "Zlínský kraj",
-      "Moravskoslezský kraj",
-    ],
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "Region",
     required: [true, "Vyberte kraj"],
   },
   district: {
@@ -62,6 +48,6 @@ const leadSchema = new mongoose.Schema({
   },
 });
 
-const Lead = mongoose.model("lead", leadSchema);
+const Lead = mongoose.model("Lead", leadSchema);
 
 module.exports = Lead;

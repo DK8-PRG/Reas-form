@@ -3,13 +3,14 @@ const cors = require("cors");
 const helmet = require("helmet");
 const xss = require("xss-clean");
 const mongoSanitize = require("express-mongo-sanitize");
-const leadRouter = require("./routes/leadRouter");
+const leadRouter = require("./routes/leadRoutes");
+const enumRouter = require("./routes/enumRoutes");
 
 const app = express();
 
 // middleware pro nastavení bezpečnostích hlaviček
 app.use(helmet());
-// midlewawre pro parsování JSON a URL-encoded dat
+// middleware pro parsování JSON a URL-encoded dat
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
@@ -23,6 +24,7 @@ app.use(cors());
 app.options("*", cors());
 // nahrání routes
 app.use("/api/v1/leads", leadRouter);
+app.use("/api/v1/enums", enumRouter);
 
 // middleware pro zpracování neexistující rout
 app.all("*", (req, res) => {
