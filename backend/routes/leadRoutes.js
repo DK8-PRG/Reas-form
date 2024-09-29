@@ -11,7 +11,8 @@ router.post(
       .not()
       .isEmpty()
       .withMessage("Typ nemovitosti je povinný"),
-    check("fullName").not().isEmpty().withMessage("Jméno je povinné"),
+    check("firstName").not().isEmpty().withMessage("Jméno je povinné"),
+    check("lastName").not().isEmpty().withMessage("Příjmení je povinné"),
     check("phone")
       .matches(/^\+?(420|421)?\d{9}$/)
       .withMessage("Neplatné telefonní číslo"),

@@ -1,17 +1,14 @@
 const Region = require("../models/krajModel");
+const Lead = require("../models/leadModel");
 
 exports.getEstateType = async (req, res) => {
-  // Vaše logika pro získání typů nemovitostí
-};
-
-exports.getRegions = async (req, res) => {
   try {
-    const regions = await Region.find().select("name");
+    // Získání enum hodnot z Lead schématu
+    const estateTypes = Lead.schema.path("estateType").enumValues;
+
     res.status(200).json({
       status: "success",
-      data: {
-        regions,
-      },
+      data: estateTypes,
     });
   } catch (error) {
     res.status(500).json({
@@ -20,7 +17,22 @@ exports.getRegions = async (req, res) => {
     });
   }
 };
-
+exports.getRegions = async (req, res) => {
+  try {
+    const regions = await Region.find();
+    res.status(200).json({
+      status: "success",
+      data: {
+        regions,
+      },
+    });
+  } catch (error) {
+    res.status(400).json({
+      status: "fail",
+      message: error.message,
+    });
+  }
+};
 exports.getDistrictsByRegion = async (req, res) => {
   try {
     const region = await Region.findOne({ slug: req.params.slug });
@@ -37,7 +49,7 @@ exports.getDistrictsByRegion = async (req, res) => {
       },
     });
   } catch (error) {
-    res.status(500).json({
+    res.status(400).json({
       status: "fail",
       message: error.message,
     });

@@ -7,11 +7,22 @@ const leadSchema = new mongoose.Schema({
     enum: ["Byt", "Pozemek", "Celý dům"],
     required: [true, "Vyberte typ nemovitosti"],
   },
-  fullName: {
+  firstName: {
     type: String,
     required: [true, "Zadejte Vaše jméno"],
     minlength: [2, "Jméno musí mít alespoň 2 znaky"],
     maxlength: [50, "Jméno nesmí být delší než 50 znaků"],
+    trim: true,
+  },
+  lastName: {
+    type: String,
+    required: [true, "Zadejte Vaše příjmení"],
+    minlength: [2, "Příjmení musí mít alespoň 2 znaky"],
+    maxlength: [50, "Příjmení nesmí být delší než 50 znaků"],
+    trim: true,
+  },
+  fullName: {
+    type: String,
     trim: true,
   },
   phone: {
@@ -39,7 +50,8 @@ const leadSchema = new mongoose.Schema({
     required: [true, "Vyberte kraj"],
   },
   district: {
-    type: String,
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "District",
     required: [true, "Vyberte okres"],
   },
   createdAt: {
