@@ -61,7 +61,7 @@ function PropertyList({ propertyTypes, onSelectType, selectedType }) {
             type={type}
             IconComponent={IconComponent}
             onClick={onSelectType}
-            isSelected={selectedType === type} // Přidání vybraného stavu
+            isSelected={selectedType === type}
           />
         );
       })}
@@ -72,7 +72,7 @@ function PropertyList({ propertyTypes, onSelectType, selectedType }) {
 PropertyList.propTypes = {
   propertyTypes: PropTypes.arrayOf(PropTypes.string).isRequired,
   onSelectType: PropTypes.func.isRequired,
-  selectedType: PropTypes.string, // Přidání prop selectedType
+  selectedType: PropTypes.string,
 };
 
 export default PropertyList;

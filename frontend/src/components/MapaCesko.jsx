@@ -7,12 +7,12 @@ import Heading from "../ui/Heading";
 
 const StyledSvg = styled.svg`
   width: 100%;
-  height: 34vh; /* Výška mapy nastavena na 40% výšky viewportu */
+  height: 34vh;
   max-width: 100%;
   margin: 4rem;
   padding: 0rem;
   display: block;
-  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1); /* Přidání animace */
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
 `;
 
 const MapContainer = styled.div`
@@ -30,25 +30,20 @@ function MapaCesko() {
 
   function handleSelectedKraj(kraj) {
     if (selectedKraj === kraj) {
-      // Pokud je kraj znovu vybrán, vrátíme mapu do původního zobrazení
       setSelectedKraj(null);
-      setViewBox(originalViewBox); // Vrátíme původní viewBox
+      setViewBox(originalViewBox);
     } else {
       setSelectedKraj(kraj);
 
-      // Použijeme přímo labelPosition kraje pro výpočet viewBoxu
       const krajCenterX = kraj.labelPosition.x;
       const krajCenterY = kraj.labelPosition.y;
 
-      // Nastavíme velikost viewBoxu pro zoom, např. šířka 500, výška 300
       const zoomWidth = 600;
       const zoomHeight = 400;
 
-      // Centrovat na kraj: Posuneme viewBox tak, aby kraj byl ve středu
       const newViewBoxX = krajCenterX - zoomWidth / 2;
       const newViewBoxY = krajCenterY - zoomHeight / 2;
 
-      // Nastavíme nový viewBox
       const newViewBox = `${newViewBoxX} ${newViewBoxY} ${zoomWidth} ${zoomHeight}`;
       setViewBox(newViewBox);
     }

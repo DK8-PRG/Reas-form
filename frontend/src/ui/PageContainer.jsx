@@ -10,8 +10,8 @@ const StyledPage = styled.div`
   /* aspect-ratio: 1 / 1.414; */
   width: 100%;
   max-width: 90vw;
-  max-height: 90vh; /* Přidáme maximální výšku, aby obsah nepřetýkal */
-  overflow: hidden; /* Přidáme overflow, aby přetékající obsah nebyl viditelný */
+  max-height: 90vh;
+  overflow: hidden;
   margin: 3rem auto;
   padding: 10rem;
   border-radius: 8px;

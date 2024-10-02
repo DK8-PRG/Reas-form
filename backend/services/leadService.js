@@ -38,7 +38,6 @@ exports.createLead = async ({
       district: foundDistrict._id,
     });
   } catch (error) {
-    // Ošetření chyby duplicity (E11000 je kód pro duplicitu v MongoDB)
     if (error.code === 11000) {
       if (error.keyValue.email) {
         throw new Error("Tento email je již zaregistrován.");

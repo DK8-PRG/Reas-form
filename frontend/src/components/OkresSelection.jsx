@@ -23,7 +23,7 @@ const OkresLabel = styled.label`
     $isSelected ? "var(--color-primary-500)" : "var(--color-gray-100)"};
   color: ${({ $isSelected }) =>
     $isSelected ? "var(--color-gray-50)" : "var(--color-gray-700)"};
-  white-space: nowrap; /* Zabrání zalomení textu uvnitř tlačítka */
+  white-space: nowrap;
 
   &:hover {
     background-color: var(--color-primary-200);

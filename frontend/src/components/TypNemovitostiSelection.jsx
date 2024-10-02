@@ -7,7 +7,7 @@ import Heading from "../ui/Heading";
 
 const TypNemovitostiContainer = styled.div`
   width: 100%;
-  height: 15vh; /* Zabírá 15% výšky viewportu */
+  height: 15vh;
   display: flex;
   justify-content: center;
   align-items: center;

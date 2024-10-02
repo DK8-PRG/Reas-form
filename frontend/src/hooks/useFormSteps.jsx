@@ -23,7 +23,6 @@ export function useFormSteps(initialData) {
   const handleSubmit = (data) => {
     const finalData = { ...formData, ...data };
     console.log("Submitted data:", finalData);
-    // Odeslat data na API nebo jinou logiku zde
     handleReset();
   };
 

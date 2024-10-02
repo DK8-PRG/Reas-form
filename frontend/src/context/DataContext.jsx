@@ -32,7 +32,6 @@ function DataProvider({ children }) {
 
   const navigate = useNavigate();
 
-  // Fetching regions and property types
   useEffect(() => {
     async function fetchKraje() {
       try {

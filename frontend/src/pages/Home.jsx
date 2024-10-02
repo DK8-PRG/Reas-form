@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import PageContainer from "../ui/PageContainer";
-import { PrimaryButton } from "../ui/Button"; // Importuj PrimaryButton
+import { PrimaryButton } from "../ui/Button";
 import Heading from "../ui/Heading";
 import styled from "styled-components";
 const HomeContainer = styled.div`

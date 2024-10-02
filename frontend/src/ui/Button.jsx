@@ -22,7 +22,6 @@ const StyledButton = styled.button`
   }
 `;
 
-// Tlačítko pro primární akce jako "Chci nabídku", "Pokračovat", "Poslat"
 export const PrimaryButton = styled(StyledButton)`
   margin-top: 3rem;
   background-color: var(--color-primary-300);

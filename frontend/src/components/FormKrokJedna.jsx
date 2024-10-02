@@ -1,11 +1,11 @@
 import { useContext } from "react";
-import { DataContext } from "../context/DataContext"; // Import DataContextu
+import { DataContext } from "../context/DataContext";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 import TypNemovitostiSelection from "./TypNemovitostiSelection";
 import MapaCesko from "./MapaCesko";
 import OkresSelection from "./OkresSelection";
-import { PrimaryButton } from "../ui/Button"; // Použijeme PrimaryButton
+import { PrimaryButton } from "../ui/Button";
 
 const Container = styled.div`
   display: flex;
@@ -14,10 +14,10 @@ const Container = styled.div`
   align-items: center;
   width: 100%;
   max-width: 800px;
-  height: 100vh; /* Celková výška je 100% viewportu */
-  margin-top: 4rem; /* Odsazení od horního okraje */
+  height: 100vh;
+  margin-top: 4rem;
   margin-bottom: 4rem;
-  gap: 0; /* Žádná mezera mezi prvky */
+  gap: 0;
 `;
 
 function FormKrokJedna({ onNext }) {

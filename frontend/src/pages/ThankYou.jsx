@@ -18,8 +18,8 @@ const ThankYouContainer = styled.div`
 
 const ButtonGroup = styled.div`
   display: flex;
-  gap: 1.5rem; /* Větší mezera mezi tlačítky */
-  margin-top: 3rem; /* Větší mezera nad tlačítky */
+  gap: 1.5rem;
+  margin-top: 3rem;
 `;
 
 const SubText = styled.p`

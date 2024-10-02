@@ -38,7 +38,7 @@ InputField.propTypes = {
   label: PropTypes.string.isRequired,
   id: PropTypes.string.isRequired,
   error: PropTypes.string,
-  register: PropTypes.object.isRequired, // register musí být objekt
+  register: PropTypes.object.isRequired,
 };
 
 export default InputField;
