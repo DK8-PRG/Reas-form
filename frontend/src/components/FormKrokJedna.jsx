@@ -1,62 +1,53 @@
+import { useContext } from "react";
+import { DataContext } from "../context/DataContext"; // Import DataContextu
+import PropTypes from "prop-types";
 import styled from "styled-components";
+import TypNemovitostiSelection from "./TypNemovitostiSelection";
+import MapaCesko from "./MapaCesko";
+import OkresSelection from "./OkresSelection";
+import { PrimaryButton } from "../ui/Button"; // Použijeme PrimaryButton
 
-const FormFiled = styled.div`
-  margin-bottom: 20px;
-`;
-
-const Label = styled.label`
-  display: block;
-  margin-bottom: 5px;
-  font-weight: bold;
-`;
-
-const ErrorMessage = styled.div`
-  color: red;
-  margin-top: 5px;
-`;
-const Button = styled.button`
-  padding: 10px 20px;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-
-  &:hover {
-    background-color: #0056b3;
-  }
-`;
-const IconButton = styled.button`
+const Container = styled.div`
   display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
   align-items: center;
-  justify-content: center;
-  padding: 10px;
-  margin: 5px;
-  background-color: #f0f0f0;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  cursor: pointer;
-
-  &:hover {
-    background-color: #e0e0e0;
-  }
-  &:selected {
-    background-color: #007bff;
-    color: white;
-  }
+  width: 100%;
+  max-width: 800px;
+  height: 100vh; /* Celková výška je 100% viewportu */
+  margin-top: 4rem; /* Odsazení od horního okraje */
+  margin-bottom: 4rem;
+  gap: 0; /* Žádná mezera mezi prvky */
 `;
-function FormKrokJedna({ register, handleSubmit, errors, onSubmit }) {
-  const [selectedType, setSelectedType] = useState(null);
+
+function FormKrokJedna({ onNext }) {
+  const { selectedTyp, selectedKraj, selectedOkres } = useContext(DataContext);
+
+  function handleNext() {
+    onNext({
+      estateType: selectedTyp,
+      region: selectedKraj?.name,
+      district: selectedOkres?.name,
+    });
+  }
+
   return (
-    <form onSubmit={onSubmit}>
-      <FormFiled>
-        <Label>Typ Nemovitosti</Label>
-        <div>
-          <IconButton type="button" className={}
-        </div>
-      </FormFiled>
-    </form>
+    <Container>
+      <TypNemovitostiSelection />
+
+      <MapaCesko />
+
+      {selectedKraj && <OkresSelection />}
+
+      {selectedTyp && selectedKraj && selectedOkres && (
+        <PrimaryButton onClick={handleNext}>Pokračovat</PrimaryButton>
+      )}
+    </Container>
   );
 }
+
+FormKrokJedna.propTypes = {
+  onNext: PropTypes.func.isRequired,
+};
 
 export default FormKrokJedna;

@@ -1,4 +1,4 @@
-const Region = require("../models/krajModel");
+const Region = require("../models/regionModel");
 const Lead = require("../models/leadModel");
 
 exports.getEstateType = async (req, res) => {

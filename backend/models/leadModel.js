@@ -51,7 +51,7 @@ const leadSchema = new mongoose.Schema({
   },
   district: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: "District",
+    // ref: "District",
     required: [true, "Vyberte okres"],
   },
   createdAt: {

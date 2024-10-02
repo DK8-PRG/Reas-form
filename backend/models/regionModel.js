@@ -18,6 +18,13 @@ const regionSchema = new mongoose.Schema({
     type: String,
     unique: true,
   },
+  pathData: {
+    type: String,
+  },
+  labelPosition: {
+    x: { type: Number, required: true },
+    y: { type: Number, required: true },
+  },
   districts: [districtSchema],
 });
 
@@ -30,5 +37,6 @@ regionSchema.pre("save", function (next) {
 });
 
 const Region = mongoose.model("Region", regionSchema);
+// const District = mongoose.model("District", districtSchema);
 
 module.exports = Region;
