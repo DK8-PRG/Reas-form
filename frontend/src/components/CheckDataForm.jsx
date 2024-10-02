@@ -8,15 +8,15 @@ import Heading from "../ui/Heading";
 const CheckDataContainer = styled.div`
   margin-top: 3rem;
   text-align: center;
-  padding: 2rem; /* Přidání paddingu kolem celého formuláře */
+  padding: 2rem;
 `;
 
 const FormWrapper = styled.div`
-  margin-bottom: 2rem; /* Přidání prostoru mezi formulářem a výsledkem */
+  margin-bottom: 2rem;
 `;
 
 const ButtonWrapper = styled.div`
-  margin-top: 1.5rem; /* Přidání prostoru mezi vstupním polem a tlačítkem */
+  margin-top: 1.5rem;
 `;
 
 const DataDetails = styled.div`
@@ -33,7 +33,7 @@ const DataDetails = styled.div`
 const ErrorText = styled.p`
   color: var(--color-danger);
   font-size: var(--font-size-sm);
-  margin-top: 1rem; /* Přidání prostoru mezi chybovou zprávou a vstupem */
+  margin-top: 1rem;
 `;
 
 function CheckDataForm() {
