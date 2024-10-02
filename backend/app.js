@@ -28,7 +28,12 @@ app.options("*", cors()); // Povolí všechny možnosti pro CORS
 // Nahrání routes
 app.use("/api/v1/leads", leadRouter);
 app.use("/api/v1/enums", enumRouter);
-
+app.get("/", (req, res) => {
+  res.json({
+    message:
+      "Vítejte na API. Pro více informací použijte správné API endpointy.",
+  });
+});
 // Middleware pro zpracování neexistující rout
 app.all("*", (req, res, next) => {
   const err = new Error(`Neexistující routa ${req.originalUrl}`);

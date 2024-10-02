@@ -13,10 +13,10 @@ const app = require("./app");
 
 connectDB();
 
-const port = process.env.PORT || 3000;
+// const port = process.env.PORT || 3000;
 
-const server = app.listen(port, () => {
-  console.log(`App běží na portu ${port}...`);
+const server = app.listen(8080, "0.0.0.0", () => {
+  console.log(`App běží na portu 8080...`);
 });
 
 process.on("unhandledRejection", (err) => {
