@@ -1,4 +1,4 @@
-const apiUrl = "http://localhost:5000";
+const apiUrl = "https://reas-form-xnl3.onrender.com";
 
 // Zpracování odpovědí a chyb
 const handleResponse = async (res) => {

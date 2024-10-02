@@ -17,7 +17,7 @@ WORKDIR /app/backend
 # Zkopíruj package.json a nainstaluj závislosti
 COPY backend/package.json backend/package-lock.json ./
 RUN npm install
-COPY backend/config.env .env
+# COPY backend/config.env .env
 # Zkopíruj veškeré zdrojové soubory backendu
 COPY backend/ ./
 
