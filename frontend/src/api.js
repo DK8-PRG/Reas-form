@@ -1,4 +1,4 @@
-const apiUrl = "https://reas-form-xnl3.onrender.com";
+const apiUrl = "https://reas-form.fly.dev";
 // const apiUrl = "http://localhost:5000";
 
 // Zpracování odpovědí a chyb
