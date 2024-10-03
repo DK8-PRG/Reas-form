@@ -24,6 +24,7 @@ const StyledButton = styled.button`
 
 export const PrimaryButton = styled(StyledButton)`
   margin-top: 3rem;
+  margin-bottom: 1rem;
   background-color: var(--color-primary-300);
   &:hover {
     background-color: var(--color-primary-400);

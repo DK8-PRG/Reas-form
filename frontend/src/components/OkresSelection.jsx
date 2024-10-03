@@ -15,6 +15,10 @@ const OkresContainer = styled.div`
     height: auto;
     padding: 0.5rem;
   }
+  @media (max-width: 480px) {
+    height: auto;
+    gap: 0rem;
+  }
 `;
 
 const OkresLabel = styled.label`
@@ -33,6 +37,17 @@ const OkresLabel = styled.label`
   &:hover {
     background-color: var(--color-primary-200);
   }
+  @media (max-width: 768px) {
+    padding: 0.5rem 0.8rem;
+    margin: 0.4rem;
+    font-size: 1.3rem;
+  }
+
+  @media (max-width: 480px) {
+    padding: 0.3rem 0.6rem;
+    margin: 0.3rem;
+    font-size: 1.2rem;
+  }
 `;
 
 function OkresSelection() {
@@ -49,7 +64,6 @@ function OkresSelection() {
     <>
       <Heading level={2}>Vyberte okres</Heading>{" "}
       <OkresContainer>
-        {/* Nadpis součástí komponenty */}
         {selectedKraj.districts.map((okres) => (
           <OkresLabel
             key={okres._id}

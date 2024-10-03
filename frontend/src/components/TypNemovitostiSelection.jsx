@@ -9,7 +9,9 @@ const TypNemovitostiContainer = styled.div`
   width: 100%;
   height: 15vh;
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  gap: 1rem;
   align-items: center;
   padding: 0 1rem;
 `;
@@ -20,17 +22,14 @@ function TypNemovitostiSelection({ onSelect }) {
   const handleSelectType = onSelect || setSelectedTyp;
 
   return (
-    <div>
+    <TypNemovitostiContainer>
       <Heading level={2}>Vyberte Typ Nemovitosti</Heading>
-
-      <TypNemovitostiContainer>
-        <PropertyList
-          propertyTypes={typyNemovitosti}
-          onSelectType={handleSelectType}
-          selectedType={selectedTyp}
-        />
-      </TypNemovitostiContainer>
-    </div>
+      <PropertyList
+        propertyTypes={typyNemovitosti}
+        onSelectType={handleSelectType}
+        selectedType={selectedTyp}
+      />
+    </TypNemovitostiContainer>
   );
 }
 

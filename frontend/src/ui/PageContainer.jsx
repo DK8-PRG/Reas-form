@@ -31,7 +31,8 @@ const StyledPage = styled.div`
   @media (max-width: 480px) {
     padding: 2rem;
     max-width: 97vw;
-    max-height: 97.5vh;
+    height: auto;
+    max-height: auto;
     margin: 1rem auto;
   }
 `;
