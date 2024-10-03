@@ -68,8 +68,6 @@ Copy code
 ### 4. Odeslání poptávky
 POST /api/v1/leads Body: { "firstName": "John", "lastName": "Doe", "email": "john@example.com", "phone": "123456789", "estateType": "Byt", "region": "Hlavní město Praha", "district": "Praha 1" }
 
-markdown
-Copy code
 
 ## Instalace a spuštění lokálně
 
