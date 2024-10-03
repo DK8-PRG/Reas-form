@@ -28,6 +28,8 @@ function DataProvider({ children }) {
 
   const [formData, setFormData] = useState(initialState);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [loadingKraje, setLoadingKraje] = useState(true);
+  const [loadingTypyNemovitosti, setLoadingTypyNemovitosti] = useState(true);
   const [error, setError] = useState(null);
 
   const navigate = useNavigate();
@@ -39,6 +41,8 @@ function DataProvider({ children }) {
         setKraje(regions);
       } catch (error) {
         setError("Chyba při načítání krajů");
+      } finally {
+        setLoadingKraje(false);
       }
     }
 
@@ -48,6 +52,8 @@ function DataProvider({ children }) {
         setTypyNemovitosti(types);
       } catch (error) {
         setError("Chyba při načítání typů nemovitostí");
+      } finally {
+        setLoadingTypyNemovitosti(false);
       }
     }
 
@@ -118,6 +124,8 @@ function DataProvider({ children }) {
     setFormData,
     isSubmitting,
     error,
+    loadingKraje,
+    loadingTypyNemovitosti,
     handleFormSubmit,
     resetForm,
     goToHome,
@@ -131,5 +139,4 @@ DataProvider.propTypes = {
   children: PropTypes.node.isRequired,
 };
 
-export { DataContext };
-export default DataProvider;
+export { DataContext, DataProvider };

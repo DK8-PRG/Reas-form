@@ -6,6 +6,7 @@ import TypNemovitostiSelection from "./TypNemovitostiSelection";
 import MapaCesko from "./MapaCesko";
 import OkresSelection from "./OkresSelection";
 import { PrimaryButton } from "../ui/Button";
+import Spinner from "../ui/Spinner"; // Import spinneru
 
 const Container = styled.div`
   display: flex;
@@ -21,7 +22,13 @@ const Container = styled.div`
 `;
 
 function FormKrokJedna({ onNext }) {
-  const { selectedTyp, selectedKraj, selectedOkres } = useContext(DataContext);
+  const {
+    selectedTyp,
+    selectedKraj,
+    selectedOkres,
+    loadingKraje,
+    loadingTypyNemovitosti,
+  } = useContext(DataContext);
 
   function handleNext() {
     onNext({
@@ -33,14 +40,17 @@ function FormKrokJedna({ onNext }) {
 
   return (
     <Container>
-      <TypNemovitostiSelection />
-
-      <MapaCesko />
-
-      {selectedKraj && <OkresSelection />}
-
-      {selectedTyp && selectedKraj && selectedOkres && (
-        <PrimaryButton onClick={handleNext}>Pokračovat</PrimaryButton>
+      {loadingKraje || loadingTypyNemovitosti ? (
+        <Spinner />
+      ) : (
+        <>
+          <TypNemovitostiSelection />
+          <MapaCesko />
+          {selectedKraj && <OkresSelection />}
+          {selectedTyp && selectedKraj && selectedOkres && (
+            <PrimaryButton onClick={handleNext}>Pokračovat</PrimaryButton>
+          )}
+        </>
       )}
     </Container>
   );

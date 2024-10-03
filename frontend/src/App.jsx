@@ -7,7 +7,7 @@ import {
 import FormChciNabidku from "./pages/FormChciNabidku";
 import ThankYouPage from "./pages/ThankYou";
 import GlobalStyles from "./styles/GlobalStyles";
-import DataProvider from "./context/DataContext";
+import { DataProvider } from "./context/DataContext";
 import HomePage from "./pages/Home";
 
 function App() {
