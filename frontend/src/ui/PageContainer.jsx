@@ -21,6 +21,19 @@ const StyledPage = styled.div`
   &:hover {
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15), 0 12px 24px rgba(0, 0, 0, 0.2);
   }
+
+  @media (max-width: 768px) {
+    padding: 5rem;
+    max-width: 95vw;
+    max-height: 95vh;
+  }
+
+  @media (max-width: 480px) {
+    padding: 2rem;
+    max-width: 97vw;
+    max-height: 97.5vh;
+    margin: 1rem auto;
+  }
 `;
 function PageContainer({ children }) {
   return <StyledPage>{children}</StyledPage>;

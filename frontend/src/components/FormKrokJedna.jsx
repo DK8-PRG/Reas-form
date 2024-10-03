@@ -6,7 +6,7 @@ import TypNemovitostiSelection from "./TypNemovitostiSelection";
 import MapaCesko from "./MapaCesko";
 import OkresSelection from "./OkresSelection";
 import { PrimaryButton } from "../ui/Button";
-import Spinner from "../ui/Spinner"; // Import spinneru
+import Spinner from "../ui/Spinner";
 
 const Container = styled.div`
   display: flex;

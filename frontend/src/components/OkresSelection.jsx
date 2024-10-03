@@ -10,6 +10,11 @@ const OkresContainer = styled.div`
   flex-wrap: wrap;
   justify-content: center;
   align-items: flex-start;
+
+  @media (max-width: 768px) {
+    height: auto;
+    padding: 0.5rem;
+  }
 `;
 
 const OkresLabel = styled.label`

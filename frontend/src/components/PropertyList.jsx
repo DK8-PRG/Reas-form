@@ -29,7 +29,7 @@ const PropertieList = styled.div`
   width: 100%;
   gap: 2rem;
   height: 10rem;
-  flex-wrap: wrap;
+  /* flex-wrap: wrap; */
 
   @media (max-width: 768px) {
     height: 8rem;
@@ -42,7 +42,7 @@ const PropertieList = styled.div`
 
   @media (max-width: 480px) {
     height: 6rem;
-    gap: 0.25rem;
+    gap: 0rem;
 
     & > button {
       transform: scale(0.6);

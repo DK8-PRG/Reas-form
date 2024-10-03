@@ -13,6 +13,16 @@ const StyledSvg = styled.svg`
   padding: 0rem;
   display: block;
   transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+
+  @media (max-width: 768px) {
+    height: 30vh;
+    margin: 2rem;
+  }
+
+  @media (max-width: 480px) {
+    height: 25vh;
+    margin: 1rem;
+  }
 `;
 
 const MapContainer = styled.div`
