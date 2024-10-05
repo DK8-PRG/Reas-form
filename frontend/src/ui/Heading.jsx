@@ -1,26 +1,41 @@
 import PropTypes from "prop-types";
 import styled from "styled-components";
 
-// Určení velikosti nadpisu podle úrovně
+// Určení velikosti pro h1
 const headingSizes = {
-  1: "var(--font-size-xl)",
-  2: "var(--font-size-lg)",
-  3: "var(--font-size-md)",
-  4: "var(--font-size-sm)",
+  desktop: "3rem",
+  tablet: "2.5rem",
+  mobile: "2rem",
 };
 
 const StyledHeading = styled.h1`
-  font-size: ${(props) => headingSizes[props.level] || headingSizes[1]};
+  font-size: ${headingSizes.desktop};
   color: var(--color-grey-900);
+  margin-top: ${(props) => props.marginTop || "2rem"};
+  margin-bottom: ${(props) => props.marginBottom || "2rem"};
+
+  /* Responzivní velikost pro různé obrazovky */
+  @media (max-width: 768px) {
+    font-size: ${headingSizes.tablet};
+  }
+
+  @media (max-width: 480px) {
+    font-size: ${headingSizes.mobile};
+  }
 `;
 
-function Heading({ level = 1, children }) {
-  return <StyledHeading as={`h${level}`}>{children}</StyledHeading>;
+function Heading({ children, marginTop, marginBottom }) {
+  return (
+    <StyledHeading marginTop={marginTop} marginBottom={marginBottom}>
+      {children}
+    </StyledHeading>
+  );
 }
 
 Heading.propTypes = {
-  level: PropTypes.number,
   children: PropTypes.node.isRequired,
+  marginTop: PropTypes.string,
+  marginBottom: PropTypes.string,
 };
 
 export default Heading;

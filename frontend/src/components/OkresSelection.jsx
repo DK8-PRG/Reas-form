@@ -4,21 +4,12 @@ import styled from "styled-components";
 import Heading from "../ui/Heading";
 const OkresContainer = styled.div`
   width: 100%;
-  height: 10vh;
+  height: auto;
   padding: 1rem;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: flex-start;
-
-  @media (max-width: 768px) {
-    height: auto;
-    padding: 0.5rem;
-  }
-  @media (max-width: 480px) {
-    height: auto;
-    gap: 0rem;
-  }
 `;
 
 const OkresLabel = styled.label`
@@ -62,7 +53,7 @@ function OkresSelection() {
 
   return (
     <>
-      <Heading level={2}>Vyberte okres</Heading>{" "}
+      <Heading>Vyberte okres v zvoleném kraji</Heading>{" "}
       <OkresContainer>
         {selectedKraj.districts.map((okres) => (
           <OkresLabel

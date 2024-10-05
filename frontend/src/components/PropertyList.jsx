@@ -45,7 +45,7 @@ const PropertieList = styled.div`
     gap: 0rem;
 
     & > button {
-      transform: scale(0.6);
+      transform: scale(0.8);
     }
   }
 `;

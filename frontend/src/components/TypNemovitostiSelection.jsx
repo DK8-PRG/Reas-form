@@ -7,13 +7,13 @@ import Heading from "../ui/Heading";
 
 const TypNemovitostiContainer = styled.div`
   width: 100%;
-  height: 15vh;
+  height: auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 1rem;
+  gap: 2rem;
   align-items: center;
-  padding: 0 1rem;
+  padding: 1rem;
 `;
 
 function TypNemovitostiSelection({ onSelect }) {
@@ -23,7 +23,8 @@ function TypNemovitostiSelection({ onSelect }) {
 
   return (
     <TypNemovitostiContainer>
-      <Heading level={2}>Vyberte Typ Nemovitosti</Heading>
+      <Heading>Jaký typ nemovitosti hledáte?</Heading>
+
       <PropertyList
         propertyTypes={typyNemovitosti}
         onSelectType={handleSelectType}

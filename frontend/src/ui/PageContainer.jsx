@@ -10,8 +10,8 @@ const StyledPage = styled.div`
   /* aspect-ratio: 1 / 1.414; */
   width: 100%;
   max-width: 90vw;
-  max-height: 90vh;
-  overflow: hidden;
+  min-height: 90vh;
+  overflow: auto;
   margin: 3rem auto;
   padding: 10rem;
   border-radius: 8px;
@@ -24,15 +24,13 @@ const StyledPage = styled.div`
 
   @media (max-width: 768px) {
     padding: 5rem;
-    max-width: 95vw;
-    max-height: 95vh;
+    /* max-width: 95vw; */
+    /* max-height: 95vh; */
   }
 
   @media (max-width: 480px) {
     padding: 2rem;
-    max-width: 97vw;
     height: auto;
-    max-height: auto;
     margin: 1rem auto;
   }
 `;

@@ -13,6 +13,16 @@ const FormContainer = styled.div`
   padding: 2rem;
 
   height: 80vh;
+  @media (max-width: 768px) {
+    padding: 1.5rem;
+    margin: 1rem auto;
+  }
+
+  @media (max-width: 480px) {
+    width: 100%;
+    padding: 1rem;
+    /* margin: 0.5rem auto; */
+  }
 `;
 
 const ButtonContainer = styled.div`
@@ -45,7 +55,7 @@ function FormKrokDva({ onSubmit, onBack, defaultValues }) {
 
   return (
     <FormContainer>
-      <Heading level={1}>Vaše kontaktní údaje</Heading>
+      <Heading>Vaše kontaktní údaje</Heading>
       <form onSubmit={handleSubmit(onFormSubmit)}>
         <InputField
           label="Jméno"

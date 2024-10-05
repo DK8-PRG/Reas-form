@@ -18,7 +18,21 @@ const Container = styled.div`
   height: auto;
   margin-top: 4rem;
   margin-bottom: 4rem;
-  gap: 0;
+  gap: 1rem;
+
+  @media (max-width: 768px) {
+    gap: 0.5rem;
+  }
+
+  @media (max-width: 480px) {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    padding: 1rem;
+  }
+
+  @media (max-height: 480px) {
+    overflow-y: auto;
+  }
 `;
 
 function FormKrokJedna({ onNext }) {

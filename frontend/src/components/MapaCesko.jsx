@@ -7,7 +7,7 @@ import Heading from "../ui/Heading";
 
 const StyledSvg = styled.svg`
   width: 100%;
-  height: 34vh;
+  height: 40vh;
   max-width: 100%;
   margin: 4rem;
   padding: 0rem;
@@ -23,12 +23,21 @@ const StyledSvg = styled.svg`
     height: 25vh;
     margin: 1rem;
   }
+
+  @media (orientation: landscape) and (max-width: 844px) and (max-height: 390px) {
+    height: 60vw;
+    margin: 1rem;
+  }
 `;
 
 const MapContainer = styled.div`
   width: 100%;
   padding: 1rem;
   position: relative;
+
+  @media (max-width: 480px) {
+    padding: 0.5rem;
+  }
 `;
 
 function MapaCesko() {
@@ -66,7 +75,7 @@ function MapaCesko() {
 
   return (
     <>
-      <Heading level={2}>Vyberte kraj</Heading>
+      <Heading marginTop={"3rem"}>Ve kterém kraji vás to zajímá?</Heading>
       <MapContainer>
         <StyledSvg
           ref={svgRef}

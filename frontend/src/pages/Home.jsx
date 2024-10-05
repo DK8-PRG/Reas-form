@@ -20,7 +20,7 @@ function HomePage() {
   return (
     <PageContainer>
       <HomeContainer>
-        <Heading level={1}>Zadejte svou poptávku</Heading>
+        <Heading>Zadejte svou poptávku</Heading>
         <PrimaryButton
           onClick={() => {
             navigate("/chci-nabidku");

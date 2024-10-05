@@ -19,8 +19,6 @@ const StyledSpinner = styled.div`
   animation: ${rotate} 1s infinite linear;
 `;
 
-function Spinner() {
+export default function Spinner() {
   return <StyledSpinner />;
 }
-
-export default Spinner;
