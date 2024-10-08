@@ -1,6 +1,9 @@
-const apiUrl = "https://reas-form.fly.dev";
+// const apiUrl = "https://reas-form.fly.dev";
 // const apiUrl = "http://localhost:5000";
-
+const apiUrl =
+  import.meta.env.MODE === "production"
+    ? import.meta.env.VITE_PRODUCTION_API_URL
+    : import.meta.env.VITE_API_URL;
 // Zpracování odpovědí a chyb
 const handleResponse = async (res) => {
   if (!res.ok) {

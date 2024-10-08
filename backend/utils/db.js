@@ -3,10 +3,7 @@ const dotenv = require("dotenv");
 
 dotenv.config({ path: "./config.env" });
 
-const DB = process.env.DATABASE.replace(
-  "_PASSWORD_",
-  process.env.DATABASE_PASSWORD
-);
+const DB = process.env.DATABASE;
 
 const connectDB = async () => {
   try {

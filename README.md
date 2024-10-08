@@ -1,8 +1,3 @@
-
-
-
-
-
 # Reas Form Application
 
 Tato aplikace umožňuje uživatelům zadávat poptávky na nemovitosti. Uživatelé mohou zadat typ nemovitosti, vybrat kraj a okres na interaktivní mapě a přidat své kontaktní údaje. Aplikace poté tyto údaje validuje a ukládá na backend.
@@ -48,49 +43,54 @@ Obsahuje informace o krajích, okresech a data potřebná k vykreslení mapy.
 ## API Endpoints
 
 ### 1. Získání typů nemovitostí
+
 GET /api/v1/enums/typ-nemovitosti
 
-shell
-Copy code
-
 ### 2. Získání krajů
+
 GET /api/v1/enums/kraje
 
-shell
-Copy code
-
 ### 3. Získání okresů podle kraje
+
 GET /api/v1/enums/okresy/
 
-shell
-Copy code
-
 ### 4. Odeslání poptávky
-POST /api/v1/leads Body: { "firstName": "John", "lastName": "Doe", "email": "john@example.com", "phone": "123456789", "estateType": "Byt", "region": "Hlavní město Praha", "district": "Praha 1" }
 
-markdown
-Copy code
+POST /api/v1/leads Body:
+{
+"firstName": "John",
+"lastName": "Doe",
+"email": "john@example.com",
+"phone": "123456789",
+"estateType": "Byt", "region":
+"Hlavní město Praha",
+"district": "Praha 1"
+}
 
 ## Instalace a spuštění lokálně
 
 ### Frontend
 
 1. Přesuňte se do složky `frontend`.
-2. Spusťte příkaz `npm install` pro instalaci závislostí.
-3. Spusťte aplikaci příkazem `npm run dev`.
+2. Vytvořte soubor `.env` s následujícím obsahem:
+   ```
+   VITE_API_URL=http://localhost:8080
+   VITE_PRODUCTION_API_URL=https://reas-form.fly.dev
+   ```
+3. Spusťte příkaz `npm install` pro instalaci závislostí.
+4. Spusťte aplikaci příkazem `npm run dev`.
 
 ### Backend
 
 1. Přesuňte se do složky `backend`.
-2. Vytvořte soubor `.env` s následujícím obsahem:
-PORT=5000 DATABASE=<MongoDB_URI>
-
-markdown
-Copy code
+2. Vytvořte soubor `config.env` s následujícím obsahem:
+   ```
+   PORT=8080
+   DATABASE=<MONGOURI>
+   ```
 3. Spusťte příkaz `npm install` pro instalaci závislostí.
-4. Spusťte server příkazem `npm start`.
-
-## Nasazení
+4. Inicializujte data regionů příkazem `node scripts/initRegions.js`.
+5. Spusťte server příkazem `npm start`.
 
 ### Frontend
 
