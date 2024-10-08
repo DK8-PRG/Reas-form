@@ -50,20 +50,16 @@ Obsahuje informace o krajích, okresech a data potřebná k vykreslení mapy.
 ### 1. Získání typů nemovitostí
 GET /api/v1/enums/typ-nemovitosti
 
-shell
-Copy code
 
 ### 2. Získání krajů
 GET /api/v1/enums/kraje
 
-shell
-Copy code
+
 
 ### 3. Získání okresů podle kraje
 GET /api/v1/enums/okresy/
 
-shell
-Copy code
+
 
 ### 4. Odeslání poptávky
 POST /api/v1/leads Body: { "firstName": "John", "lastName": "Doe", "email": "john@example.com", "phone": "123456789", "estateType": "Byt", "region": "Hlavní město Praha", "district": "Praha 1" }
@@ -83,8 +79,7 @@ POST /api/v1/leads Body: { "firstName": "John", "lastName": "Doe", "email": "joh
 2. Vytvořte soubor `.env` s následujícím obsahem:
 PORT=5000 DATABASE=<MongoDB_URI>
 
-markdown
-Copy code
+
 3. Spusťte příkaz `npm install` pro instalaci závislostí.
 4. Spusťte server příkazem `npm start`.
 
